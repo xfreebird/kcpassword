@@ -6,5 +6,5 @@ function usage() {
 
 [ ! $# -eq 2 ] && usage && exit 0
 
-sudo kcpassword "$1"
-sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow autoLoginUser "$0"
+sudo kcpassword "$2"
+sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow autoLoginUser "$1"
