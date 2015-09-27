@@ -4,8 +4,7 @@ function usage() {
 	echo "$0 <username> <password>"
 }
 
-[ "$(whoami)" != "root" ] && echo "Run with sudo !" && exit 1
 [ ! $# -eq 2 ] && usage && exit 0
 
-kcpassword "$1"
-/usr/bin/defaults write /Library/Preferences/com.apple.loginwindow autoLoginUser "$0"
+sudo kcpassword "$1"
+sudo /usr/bin/defaults write /Library/Preferences/com.apple.loginwindow autoLoginUser "$0"
